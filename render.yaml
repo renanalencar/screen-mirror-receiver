@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: screen-mirror-receiver
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: SIGNALING_URL
+        value: ws://screen-mirror-backend.onrender.com/?role=receiver
+      - key: STUN_SERVER_URL
+        value: stun:stun.l.google.com:19302

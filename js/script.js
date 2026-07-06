@@ -68,6 +68,19 @@ async function loadEnv() {
     return defaultConfig;
   }
 
+  // Try API endpoint first (available on server)
+  try {
+    const response = await fetch('/api/config');
+    if (response.ok) {
+      const config = await response.json();
+      console.log('Loaded config from API endpoint');
+      return config;
+    }
+  } catch (error) {
+    console.log('API endpoint not available, trying .env file');
+  }
+
+  // Fallback to .env file
   try {
     const response = await fetch('.env');
     if (!response.ok) return defaultConfig;
