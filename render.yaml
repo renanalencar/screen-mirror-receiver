@@ -7,6 +7,6 @@ services:
     startCommand: npm start
     envVars:
       - key: SIGNALING_URL
-        value: ws://screen-mirror-backend.onrender.com/?role=receiver
+        value: wss://screen-mirror-backend.onrender.com/?role=receiver
       - key: STUN_SERVER_URL
         value: stun:stun.l.google.com:19302
