@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Screen Mirroring - PC Receiver</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <div id="status-bar" class="hide">
+    <span><span id="status-dot"></span><span id="status-text">Waiting for connection</span></span>
+    <span id="controls">
+      <button id="btn-fill">⊡ Fill</button>
+      <button id="btn-rotate">↻ Rotate</button>
+      <button id="btn-fullscreen">⛶ Fullscreen</button>
+    </span>
+  </div>
+  <div id="video-container"><video id="remoteVideo" autoplay playsinline muted></video></div>
+  <div id="overlay">
+    <h1>📱 Waiting for mobile connection...</h1>
+    <p>Please ensure the mirroring App is open on your mobile device</p>
+    <div id="server-config">
+      <input id="signaling-host" type="text" placeholder="Signaling server IP or host:port">
+      <button id="btn-connect">Connect</button>
+    </div>
+  </div>
+  <div id="hint">Double-click Fullscreen · F Fullscreen · R Rotate · C Fill</div>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
